@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,900&family=Poppins:ital,wght@1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --white : #f9f9f9;
+    --white2 : #f2f2f2;
+    --white3 : #fbfbfb;
+    --purple: #7241a0;
+    --purple2 : #6728a1;
+    --black: #1a1a1a;
+    --black2: #2c2c2c;
+    --grey: #e2e0e0;
+    --red:#e22e2e ;
+    --red2:#d04949;
+    --green:#04eb00;
+}
+
+[data-theme="dark"]{
+    --white :#202020;
+    --white2 : #202020;
+    --white3 : #202020;
+    --purple: #6d34a2;
+    --black: #e8e8e8;
+    --black2: #f4f2f2;
+    --grey: #6a6969;
+}
+
+/*tema config*/
+
+body {
+    background-color: var(--black2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 900px;
+    transition: 1s;
+    gap: 150px;
+  }
+
+.tema {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tema h1 {
+    color: var(--white);
+    font-family:'DM Sans', sans-serif ;
+}
+
+.tema button {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--purple);
+    cursor: pointer;
+}
+
+.tema button:hover {
+    background-color: var(--purple2);
+    transition: .4s;
+}
+
+svg {
+    color: var(--white);
+    height: 24px;
+    width: 24px;
+}
+
+/*to do config*/
+
+.container {
+    background-color:var(--black);
+    width: 420px;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction:column;
+    gap: 5px;
+}
+
+.container h1 {
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 25px;
+    margin: 0px 0px 12px 0px;
+}
+
+.escreva {
+    display: flex;
+}
+
+.escreva button  {
+    height: 50px;
+    width: 100px;
+    border-radius: 100px;
+    position: absolute;
+    margin-left: 220px;
+    cursor: pointer;
+    background-color: var(--purple);
+    color: #f9f9f9;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.escreva button:hover {
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.escreva input {
+    height: 8px;
+    width: 250px;
+    border-radius: 100px;
+    font-size: 17px;
+    padding: 20px;
+    outline: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.escreva input::placeholder {
+    padding: 2px;
+    font-size: 15px;
+}
+
+.escreva input.invalido {
+    border: 1px solid var(--red);
+}
+
+.escreva input.invalido::placeholder {
+    color: var(--red2);
+}
+
+/*TAREFAS*/
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.tarefa {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    width: 400px;
+    animation: show 1s forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tarefa p {
+    color: var(--white);
+}
+
+.delet {
+    cursor:pointer;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#d5d5d5;
+    font-weight:900;  
+    justify-self: end;  
+}
+
+.delet:hover {
+    background-color: #a5a5a5;
+    transition: .5s;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    cursor:pointer;
+    background-color:var(--white3) ;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"]:hover {
+    background-color:var(--grey);
+    transition: .3s;
+    
+}
+
+input[type="checkbox"]:checked {
+    background-color:var(--green);
+    transition: .3s;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+    content: '✔';
+    font-weight: 900;
+    font-size: 18px;
+}
+
